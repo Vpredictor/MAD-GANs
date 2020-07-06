@@ -87,6 +87,7 @@ def swat(seq_length, seq_step, num_signals, randomize=False):
 
     return samples, labels
 
+
 def swat_birgan(seq_length, seq_step, num_signals, randomize=False):
     """ Load and serialise """
     # train = np.load('./data/swat.npy')
@@ -129,6 +130,7 @@ def swat_birgan(seq_length, seq_step, num_signals, randomize=False):
     labels = bb
 
     return samples, labels
+
 
 def swat_test(seq_length, seq_step, num_signals, randomize=False):
     """ Load and serialise """
@@ -354,6 +356,7 @@ def wadi_test(seq_length, seq_step, num_signals, randomize=False):
 
     return samples, labels, index
 
+
 def kdd99(seq_length, seq_step, num_signals):
     train = np.load('./data/kdd99_train.npy')
     print('load kdd99_train from .npy')
@@ -405,6 +408,7 @@ def kdd99(seq_length, seq_step, num_signals):
     labels = bb
 
     return samples, labels
+
 
 def kdd99_test(seq_length, seq_step, num_signals):
     test = np.load('./data/kdd99_test.npy')
@@ -583,7 +587,6 @@ def get_batch(samples, batch_size, batch_idx, labels=None):
         else:
             assert type(labels) == np.ndarray
             return samples[start_pos:end_pos], labels[start_pos:end_pos]
-
 
 
 def split(samples, proportions, normalise=False, scale=False, labels=None, random_seed=None):
